@@ -17,7 +17,7 @@ const registerButton = document.getElementById("register-button");
 const clearButton = document.getElementById("clear-button");
 
 inputs = [first_name, last_name, student_id, room, time_slot];
-inputs_duet = [first_name2, student_id2, last_name2]
+inputs_duet = [first_name2, student_id2, last_name2];
 
 /******************************START validators**********************************/
 function validateInput() {
@@ -92,12 +92,12 @@ my_form.addEventListener("submit", (e) => {
         fetch(apiAddress, {
             method: "POST",
             body: formData
-        }).then(response => response.json())
+        }).then(response => response.json()) //TODO: change this back to .json()
         .then(responseJson => {
-            console.log("worked");
-            console.log(responseJson);
+            displayData(responseJson);
+            //console.log(responseJson);
         }).catch(e => {
-            console.log("error: " + e);
+            //console.log("error: " + e);
         });
     }
 });
@@ -165,3 +165,14 @@ function runApiRequest() {
 }
 */
 /******************************END ajax handlers**********************************/
+
+function displayData(response_info) {
+    file_output.innerText = response_info[0].performance;
+    //console.log(JSON.stringify(response_info));
+    let output = "";
+
+    let outputHtml = `
+        <div>
+
+    `;
+}

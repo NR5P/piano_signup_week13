@@ -7,7 +7,8 @@ $new_data = array();
 foreach($_POST as $name => $value) {
     $new_data[$name] = $value;
 }
-array_push($array_data, $new_data);
+//array_push($array_data, $new_data);
+$array_data[] = $new_data;
 $newJson = json_encode($array_data);
 
 $fp = fopen($file_path, "w");
@@ -15,5 +16,6 @@ fwrite($fp, $newJson);
 fclose($fp);
 
 $fileContents = file_get_contents($file_path);
-echo $fileContents;
+echo $fileContents; //TODO: change this back to fileContents
+//var_dump($array_data);
 ?>
