@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Piano Student Registration</title>
+        <meta name="description" content="Piano student registration form for performance in September 2019">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assign13.css">
+    </head>
+    <body>
+        <div id="heading">
+            <h1>Piano Student Registration</h1>
+        </div>
+        <form id="my-form">
+            <label for="performance">Performance</label>
+            <select name="performance" id="performance">
+                <option vale="" selected="selected"></option>
+                <option value="solo">solo</option>
+                <option value="duet">duet</option> <!--make sure to add two students for the form in this case-->
+                <option value="concerto">concerto</option>
+            </select>
+
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name">
+
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name">
+
+            <label for="student_id">Student Id</label>
+            <input type="number" name="student_id" id="student_id">
+
+            <div id="shown-for-duet">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name2" id="first_name2">
+
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name2" id="last_name2">
+
+                <label for="student_id">Student Id</label>
+                <input type="number" name="student_id2" id="student_id2">
+            </div>
+
+            <label for="skill">Skill</label>
+            <select name="skill" id="skill">
+                <option value="" selected="selected"></option>
+                <option value="beginner">beginner</option>
+                <option value="intermediate">intermediate</option>
+                <option value="pre-advanced">pre-advanced</option>
+                <option value="advanced">advanced</option>
+            </select>
+
+            <label for="instrument">Instrument</label>
+            <input type="radio" name="instrument" value="piano" id="piano" class="instrument-type">
+            <label for="piano">Piano</label>
+            <input type="radio" name="instrument" value="voice" id="voice" class="instrument-type">
+            <label for="voice">Voice</label>
+            <input type="radio" name="instrument" value="string" id="string" class="instrument-type">
+            <label for="string">String</label>
+            <input type="radio" name="instrument" value="organ" id="organ" class="instrument-type">
+            <label for="organ">Organ</label>
+            <input type="radio" name="instrument" value="other" id="other" class="instrument-type" checked>
+            <label for="other">Other</label>
+
+            <label for="location">Location</label>
+            <select name="location" id="location">
+                <option value="" selected="selected"></option>
+                <option value="Snow">Snow</option>
+                <option value="Austin">Austin</option>
+                <option value="West">West</option>
+                <option value="East">East</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+            </select>
+
+            <label for="room">Room Number</label>
+            <input type="range" name="room" id="room" min="3" max="10">
+
+            <label for="time_slot">Time Slot</label>
+            <input type="time" name="time_slot" id="time_slot" min="8:00" max="18:00" required>
+
+            <input type="submit" id="register-button" value="Register">
+            <button type="button" id="clear-button">clear</button>
+
+        </form>
+        <div id="fileOutput"></div>
+        
+        <script src="assign13.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
