@@ -167,12 +167,47 @@ function runApiRequest() {
 /******************************END ajax handlers**********************************/
 
 function displayData(response_info) {
-    file_output.innerText = response_info[0].performance;
-    //console.log(JSON.stringify(response_info));
+    let jsonString = JSON.parse(JSON.stringify(response_info));
+
     let output = "";
 
-    let outputHtml = `
-        <div>
+    jsonString.forEach(element => {
+        console.log(element.first_name); 
+        output += `
+        <tr>
+            <td>${element.first_name}</td>
+            <td>${element.last_name}</td>
+            <td>${element.student_id}</td>
+            <td>${element.first_name2}</td>
+            <td>${element.last_name2}</td>
+            <td>${element.student_id2}</td>
+            <td>${element.skill}</td>
+            <td>${element.instrument}</td>
+            <td>${element.location}</td>
+            <td>${element.room}</td>
+            <td>${element.time_slot}</td>
+        </tr>
+        `;
+    });
 
-    `;
+    let baseHtml = `<div>
+    <table>
+        <tr>
+            <th>first name</h>
+            <th>last name</h>
+            <th>student ID</h>
+            <th>first name 2</h>
+            <th>last name 2</h>
+            <th>student id 2</h>
+            <th>skill level</h>
+            <th>instrument</h>
+            <th>location</h>
+            <th>room number</h>
+            <th>time slot</h>
+        </tr>   
+        ${output}
+    </table>
+    </div>`;
+
+    file_output.innerHTML = baseHtml;
 }
